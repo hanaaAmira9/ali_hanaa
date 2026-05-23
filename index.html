@@ -27,14 +27,14 @@
 }
 
 .messages-grid::before {
-    content: "💍";
+  
     display: block;
     font-size: 50px;
     margin-bottom: 15px;
 }
 
 .messages-grid::after {
-    content: "❤️";
+  
     display: block;
     font-size: 35px;
     margin-top: 20px;
@@ -579,8 +579,7 @@ Nous espérons partager ce merveilleux moment avec vous ❤️
                 });
 
                 if (response.ok) {
-                    // Afficher le message localement
-                    addMessageToDisplay(name, message, date);
+                 
                     
                     // Afficher confirmation
                     successMsg.style.display = 'block';
@@ -606,27 +605,7 @@ Nous espérons partager ce merveilleux moment avec vous ❤️
             }
         });
 
-        function addMessageToDisplay(name, message, date) {
-            const container = document.getElementById('messagesContainer');
-            const card = document.createElement('div');
-            card.className = 'message-card';
-            card.innerHTML = `
-                <div class="message-author">${name}</div>
-                <div class="message-text">${message}</div>
-                <span class="message-date">${date}</span>
-            `;
-            container.insertBefore(card, container.firstChild);
-            
-            // Animation
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'all 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100);
-        }
-
+       
         // Animation au scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
