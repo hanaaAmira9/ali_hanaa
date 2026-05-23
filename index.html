@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage Ali & Hanaa Amira - 20 Juin 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+
+        .messages-grid {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #fff8f6, #ffeaea);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #5a3e36;
+    
+    text-align: center;
+    border: 2px solid #f7c8c8;
+
+    animation: fadeIn 1.2s ease;
+}
+
+.messages-grid::before {
+    content: "💍";
+    display: block;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.messages-grid::after {
+    content: "❤️";
+    display: block;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #faf7f5 0%, #f5ebe0 100%);
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.75)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .welcome-message {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.9rem, 3vw, 1.4rem);
+            color: #8b6f47;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .name-ali {
+            display: block;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-weight: 700;
+            color: #2c1810;
+            letter-spacing: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .ampersand {
+            display: block;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #c9a87c;
+            font-style: italic;
+            margin: 0.5rem 0;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .name-hanaa {
+            display: block;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            color: #2c1810;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .date {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 4vw, 2.2rem);
+            color: #8b6f47;
+            letter-spacing: 6px;
+            margin-top: 2.5rem;
+            padding: 1rem 3rem;
+            border-top: 2px solid #c9a87c;
+            border-bottom: 2px solid #c9a87c;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            animation: float 2s ease-in-out infinite;
+            color: #8b6f47;
+            font-size: 2rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 5rem 1.5rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #2c1810;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c9a87c;
+            margin: 1rem auto;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .photo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 320px;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44,24,16,0.8), transparent);
+            padding: 2rem 1rem 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        /* Guestbook */
+        .guestbook {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, #faf7f5 0%, #f5ebe0 100%);
+            text-align: center;
+        }
+
+        .guestbook-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .guestbook-container::before {
+            content: '❦';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            color: #c9a87c;
+            opacity: 0.3;
+        }
+
+        .send-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #c9a87c 0%, #a0826d 100%);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e8ddd0;
+            border-radius: 12px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #faf7f5;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #c9a87c;
+            box-shadow: 0 0 0 3px rgba(201, 168, 124, 0.2);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #c9a87c 0%, #a0826d 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem 4rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 168, 124, 0.4);
+            animation: none;
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            animation: none;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            border-left: 4px solid #c9a87c;
+        }
+
+        .error-message {
+            display: none;
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            border-left: 4px solid #dc3545;
+        }
+
+        /* Messages */
+        .messages-section {
+            padding: 5rem 1.5rem;
+            background: #fff;
+        }
+
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .message-card {
+            background: linear-gradient(135deg, #faf7f5 0%, #fff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #c9a87c;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .message-card::before {
+            content: '"';
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #c9a87c;
+            opacity: 0.2;
+        }
+
+        .message-author {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .message-text {
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .message-date {
+            display: block;
+            margin-top: 1rem;
+            color: #c9a87c;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c1810;
+            color: #c9a87c;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-hearts {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .photo-grid { grid-template-columns: 1fr; }
+            .guestbook-container { padding: 2rem 1.2rem; }
+            .messages-grid { grid-template-columns: 1fr; }
+            .name-ali { letter-spacing: 4px; }
+            .name-hanaa { letter-spacing: 3px; }
+        }
+
+        .divider {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+            color: #c9a87c;
+            letter-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="welcome-message">Bienvenue à notre fiançailles</div>
+        <div class="couple-names">
+            <span class="name-ali">Ali</span>
+            <span class="ampersand">&</span>
+            <span class="name-hanaa">Hanaa Amira</span>
+        </div>
+        <div class="date">20 Juin 2026</div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2 class="section-title">Nos Moments Précieux</h2>
+        <div class="photo-grid">
+            <div class="photo-card">
+                <img src="IMG_0661.jpeg" alt="Mariage">
+                <div class="photo-overlay">
+                    <h3>Notre Amour</h3>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_4687.jpeg" alt="Couple">
+                <div class="photo-overlay">
+                    <h3>Ensemble</h3>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="IMG_4693.jpeg" alt="Alliances">
+                <div class="photo-overlay">
+                    <h3>Pour Toujours</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- Guestbook -->
+    <section class="guestbook">
+        <h2 class="section-title">Livre d'Or</h2>
+        
+
+        <div class="guestbook-container">
+            <!-- Formulaire Formspree -->
+            <form id="guestbookForm" action="https://formspree.io/f/mzdwvaew" method="POST">
+                
+                <!-- Champ caché pour le sujet de l'email -->
+                <input type="hidden" name="_subject" value="Nouveau message de mariage !">
+                
+               
+                <div class="form-group">
+                    <label for="guestName">Votre Nom</label>
+                    <input type="text" id="guestName" name="name" placeholder="Entrez votre nom..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestMessage">Votre Message</label>
+                    <textarea id="guestMessage" name="message" placeholder="Écrivez vos vœux de bonheur..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Envoyer 
+                </button>
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                 Message envoyé avec succès ! Merci 
+            </div>
+            
+            <div id="errorMessage" class="error-message">
+                 Une erreur s'est produite. Veuillez réessayer.
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages -->
+    <section class="messages-section">
+        <h2 class="section-title">Messages de nos invités</h2>
+        <div class="messages-grid" id="messagesContainer">Avec beaucoup de joie et d’amour, nous avons l’honneur de vous inviter à célébrer notre union.
+Votre présence rendra cette journée encore plus spéciale et inoubliable.
+
+Nous espérons partager ce merveilleux moment avec vous ❤️
+</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-hearts">♥ ♥ ♥</div>
+        <p>Famille CHARIF & Famille Taha</p>
+        <p>20 Juin 2026</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Merci de partager ce moment avec nous</p>
+    </footer>
+
+    <script>
+        // Gestion du formulaire avec Formspree
+        const form = document.getElementById('guestbookForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('guestName').value;
+            const message = document.getElementById('guestMessage').value;
+            const date = new Date().toLocaleDateString('fr-FR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Afficher le message localement
+                    addMessageToDisplay(name, message, date);
+                    
+                    // Afficher confirmation
+                    successMsg.style.display = 'block';
+                    errorMsg.style.display = 'none';
+                  
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Erreur serveur');
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                setTimeout(() => {
+                    errorMsg.style.display = 'none';
+                }, 5000);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer vos vœux 💌';
+            }
+        });
+
+        function addMessageToDisplay(name, message, date) {
+            const container = document.getElementById('messagesContainer');
+            const card = document.createElement('div');
+            card.className = 'message-card';
+            card.innerHTML = `
+                <div class="message-author">${name}</div>
+                <div class="message-text">${message}</div>
+                <span class="message-date">${date}</span>
+            `;
+            container.insertBefore(card, container.firstChild);
+            
+            // Animation
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }
+
+        // Animation au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.photo-card, .message-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
