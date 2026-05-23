@@ -3,62 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali & Hanaa Amira </title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Ali & Hanaa Amira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-
-        .messages-grid {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
-    background: linear-gradient(135deg, #fff8f6, #ffeaea);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #5a3e36;
-    
-    text-align: center;
-    border: 2px solid #f7c8c8;
-
-    animation: fadeIn 1.2s ease;
-}
-
-.messages-grid::before {
-  
-    display: block;
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-.messages-grid::after {
-  
-    display: block;
-    font-size: 35px;
-    margin-top: 20px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Reset & Variables Globales */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, #faf7f5 0%, #f5ebe0 100%);
-            color: #4a4a4a;
-            overflow-x: hidden;
+        :root {
+            --primary-dark: #0b3c26; /* Vert forêt chic de l'image */
+            --accent-gold: #c9a87c;  /* Or délicat */
+            --bg-light: #faf7f5;     /* Blanc cassé doux */
+            --text-dark: #2c1810;
         }
 
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -69,11 +35,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -82,7 +43,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.75)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)), 
                         url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80');
             background-size: cover;
             background-position: center;
@@ -94,7 +55,7 @@
         .welcome-message {
             font-family: 'Playfair Display', serif;
             font-size: clamp(0.9rem, 3vw, 1.4rem);
-            color: #8b6f47;
+            color: var(--primary-dark);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
@@ -108,43 +69,32 @@
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .name-ali {
+        .name-ali, .name-hanaa {
             display: block;
-            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-size: clamp(3.5rem, 12vw, 6.5rem);
             font-weight: 700;
-            color: #2c1810;
-            letter-spacing: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+            color: var(--primary-dark);
+            letter-spacing: 6px;
         }
 
         .ampersand {
             display: block;
             font-size: clamp(2.5rem, 8vw, 4rem);
-            color: #c9a87c;
+            color: var(--accent-gold);
             font-style: italic;
             margin: 0.5rem 0;
             animation: float 3s ease-in-out infinite;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .name-hanaa {
-            display: block;
-            font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 700;
-            color: #2c1810;
-            letter-spacing: 5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
         }
 
         .date {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 4vw, 2.2rem);
-            color: #8b6f47;
+            font-size: clamp(1.3rem, 4vw, 2rem);
+            color: var(--primary-dark);
             letter-spacing: 6px;
             margin-top: 2.5rem;
             padding: 1rem 3rem;
-            border-top: 2px solid #c9a87c;
-            border-bottom: 2px solid #c9a87c;
+            border-top: 1px solid var(--accent-gold);
+            border-bottom: 1px solid var(--accent-gold);
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
@@ -152,39 +102,39 @@
             position: absolute;
             bottom: 2rem;
             animation: float 2s ease-in-out infinite;
-            color: #8b6f47;
+            color: var(--accent-gold);
             font-size: 2rem;
         }
 
-        /* Gallery */
-        .gallery {
-            padding: 5rem 1.5rem;
-            background: #fff;
-            text-align: center;
-        }
-
+        /* Section Titres */
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.8rem, 5vw, 2.5rem);
-            color: #2c1810;
+            color: var(--primary-dark);
             margin-bottom: 3rem;
+            text-align: center;
             position: relative;
-            display: inline-block;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
-            background: #c9a87c;
-            margin: 1rem auto;
+            width: 50px;
+            height: 1px;
+            background: var(--accent-gold);
+            margin: 1.2rem auto 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 6rem 1.5rem;
+            background: #fff;
         }
 
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -192,85 +142,97 @@
         .photo-card {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 320px;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-10px);
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            height: 400px;
         }
 
         .photo-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .photo-card:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .photo-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(44,24,16,0.8), transparent);
-            padding: 2rem 1rem 1rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            inset: 0;
+            background: rgba(11, 60, 38, 0.2); /* Léger filtre vert forêt */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .photo-card:hover .photo-overlay {
-            transform: translateY(0);
+            opacity: 1;
         }
 
-        /* Guestbook */
-        .guestbook {
-            padding: 5rem 1.5rem;
-            background: linear-gradient(135deg, #faf7f5 0%, #f5ebe0 100%);
+        .photo-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            border-bottom: 1px solid white;
+            padding-bottom: 5px;
+        }
+
+        /* Style Spécial de l'Image (Annonce Moderne & Chic) */
+        .annonce-container {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
-        .guestbook-container {
+        .annonce-wrapper {
             max-width: 650px;
             margin: 0 auto;
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            position: relative;
         }
 
-        .guestbook-container::before {
-            content: '❦';
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 2.5rem;
-            color: #c9a87c;
-            opacity: 0.3;
-        }
-
-        .send-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #c9a87c 0%, #a0826d 100%);
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
+        .annonce-citation {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
             font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .annonce-texte {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Guestbook Form */
+        .guestbook {
+            padding: 6rem 1.5rem;
+            background: var(--bg-light);
+        }
+
+        .guestbook-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3.5rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
         }
 
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
             text-align: left;
         }
 
@@ -278,179 +240,128 @@
             display: block;
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
-            color: #2c1810;
-            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.6rem;
         }
 
         input[type="text"], textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #e8ddd0;
-            border-radius: 12px;
+            border: 1px solid #e2ddd5;
+            border-radius: 4px;
             font-family: 'Lato', sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: #faf7f5;
+            background: #fff;
         }
 
         input[type="text"]:focus, textarea:focus {
             outline: none;
-            border-color: #c9a87c;
-            box-shadow: 0 0 0 3px rgba(201, 168, 124, 0.2);
+            border-color: var(--accent-gold);
+            background: #fafafa;
         }
 
         textarea {
-            min-height: 140px;
+            min-height: 130px;
             resize: vertical;
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #c9a87c 0%, #a0826d 100%);
+            background: var(--primary-dark);
             color: white;
             border: none;
-            padding: 1.2rem 4rem;
+            padding: 1.2rem 3rem;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
-            border-radius: 50px;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            animation: pulse 2s ease-in-out infinite;
+            width: 100%;
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(201, 168, 124, 0.4);
-            animation: none;
+            background: #124e33;
+            letter-spacing: 3px;
         }
 
         .submit-btn:disabled {
-            background: #ccc;
-            animation: none;
+            background: #cccccc;
             cursor: not-allowed;
         }
 
-        .success-message {
+        .success-message, .error-message {
             display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 1.2rem;
-            border-radius: 12px;
+            padding: 1rem;
+            border-radius: 4px;
             margin-top: 1.5rem;
-            font-size: 1.1rem;
-            border-left: 4px solid #c9a87c;
+            font-size: 1rem;
+            text-align: center;
         }
+        .success-message { background: #e8f5e9; color: #2e7d32; }
+        .error-message { background: #ffebee; color: #c62828; }
 
-        .error-message {
-            display: none;
-            background: #f8d7da;
-            color: #721c24;
-            padding: 1.2rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
-            border-left: 4px solid #dc3545;
-        }
-
-        /* Messages */
+        /* Messages Section standard */
         .messages-section {
-            padding: 5rem 1.5rem;
+            padding: 6rem 1.5rem;
             background: #fff;
         }
 
         .messages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 750px;
             margin: 0 auto;
-        }
-
-        .message-card {
-            background: linear-gradient(135deg, #faf7f5 0%, #fff 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid #c9a87c;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .message-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .message-card::before {
-            content: '"';
-            position: absolute;
-            top: 5px;
-            left: 15px;
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: #c9a87c;
-            opacity: 0.2;
-        }
-
-        .message-author {
+            background: var(--bg-light);
+            padding: 3.5rem 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee1d5;
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
-            color: #2c1810;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .message-text {
-            color: #666;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: var(--primary-dark);
             font-style: italic;
         }
 
-        .message-date {
-            display: block;
-            margin-top: 1rem;
-            color: #c9a87c;
-            font-size: 0.9rem;
+        /* Divider */
+        .divider {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            letter-spacing: 8px;
+            background: #fff;
         }
 
         /* Footer */
         footer {
-            background: #2c1810;
-            color: #c9a87c;
+            background: var(--primary-dark);
+            color: var(--accent-gold);
             text-align: center;
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
             font-family: 'Playfair Display', serif;
         }
 
-        .footer-hearts {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            animation: float 3s ease-in-out infinite;
+        footer p {
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        footer p:first-of-type {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: #ffffff;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .photo-grid { grid-template-columns: 1fr; }
-            .guestbook-container { padding: 2rem 1.2rem; }
-            .messages-grid { grid-template-columns: 1fr; }
-            .name-ali { letter-spacing: 4px; }
-            .name-hanaa { letter-spacing: 3px; }
-        }
-
-        .divider {
-            text-align: center;
-            padding: 2rem;
-            font-size: 1.5rem;
-            color: #c9a87c;
-            letter-spacing: 10px;
+            .guestbook-container, .messages-grid { padding: 2rem 1.5rem; }
+            .name-ali, .name-hanaa { letter-spacing: 3px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="welcome-message">Bienvenue à notre fiançailles</div>
         <div class="couple-names">
@@ -462,7 +373,6 @@
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Gallery -->
     <section class="gallery">
         <h2 class="section-title">Nos Moments Précieux</h2>
         <div class="photo-grid">
@@ -471,8 +381,6 @@
                 <div class="photo-overlay">
                     <h3>Notre Amour</h3>
                 </div>
-            </div>
-          
             </div>
             <div class="photo-card">
                 <img src="IMG_4693.jpeg" alt="Alliances">
@@ -483,21 +391,21 @@
         </div>
     </section>
 
-    <div class="divider">❦ ❦ ❦</div>
+    <section class="annonce-container">
+        <div class="annonce-wrapper">
+            <div class="annonce-citation">"Une nouvelle aventure commence."</div>
+            <div class="annonce-texte">
+                Nous sommes impatients de partager ce moment de bonheur avec nos proches les plus chers.
+            </div>
+        </div>
+    </section>
 
-    <!-- Guestbook -->
     <section class="guestbook">
         <h2 class="section-title">Livre d'Or</h2>
-        
-
         <div class="guestbook-container">
-            <!-- Formulaire Formspree -->
             <form id="guestbookForm" action="https://formspree.io/f/mzdwvaew" method="POST">
-                
-                <!-- Champ caché pour le sujet de l'email -->
                 <input type="hidden" name="_subject" value="Nouveau message de mariage !">
                 
-               
                 <div class="form-group">
                     <label for="guestName">Votre Nom</label>
                     <input type="text" id="guestName" name="name" placeholder="Entrez votre nom..." required>
@@ -514,31 +422,32 @@
             </form>
             
             <div id="successMessage" class="success-message">
-                 Message envoyé avec succès ! Merci 
+                Message envoyé avec succès ! Merci 
             </div>
             
             <div id="errorMessage" class="error-message">
-                 Une erreur s'est produite. Veuillez réessayer.
+                Une erreur s'est produite. Veuillez réessayer.
             </div>
         </div>
     </section>
 
-    <!-- Messages -->
+    <div class="divider">❦</div>
+
     <section class="messages-section">
         <h2 class="section-title">Messages de nos invités</h2>
-        <div class="messages-grid" id="messagesContainer">Avec beaucoup de joie et d’amour, nous avons l’honneur de vous inviter à célébrer notre union.
-Votre présence rendra cette journée encore plus spéciale et inoubliable.
-
-Nous espérons partager ce merveilleux moment avec vous ❤️
-</div>
+        <div class="messages-grid" id="messagesContainer">
+            Avec beaucoup de joie et d’amour, nous avons l’honneur de vous inviter à célébrer notre union. 
+            Votre présence rendra cette journée encore plus spéciale et inoubliable.<br><br>
+            Nous espérons partager ce merveilleux moment avec vous 
+        </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-hearts">♥ ♥ ♥</div>
         <p>Famille CHARIF & Famille Taha</p>
         <p>20 Juin 2026</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Merci de partager ce moment avec nous</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7; font-family: 'Lato', sans-serif; letter-spacing: 1px;">
+            Merci de partager ce moment avec nous
+        </p>
     </footer>
 
     <script>
@@ -551,17 +460,6 @@ Nous espérons partager ce merveilleux moment avec vous ❤️
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('guestName').value;
-            const message = document.getElementById('guestMessage').value;
-            const date = new Date().toLocaleDateString('fr-FR', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            // Désactiver le bouton pendant l'envoi
             submitBtn.disabled = true;
             submitBtn.textContent = 'Envoi en cours...';
 
@@ -569,40 +467,28 @@ Nous espérons partager ce merveilleux moment avec vous ❤️
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
-                 
-                    
-                    // Afficher confirmation
                     successMsg.style.display = 'block';
                     errorMsg.style.display = 'none';
-                  
                     form.reset();
-                    
-                    setTimeout(() => {
-                        successMsg.style.display = 'none';
-                    }, 5000);
+                    setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
                 } else {
                     throw new Error('Erreur serveur');
                 }
             } catch (error) {
                 errorMsg.style.display = 'block';
                 successMsg.style.display = 'none';
-                setTimeout(() => {
-                    errorMsg.style.display = 'none';
-                }, 5000);
+                setTimeout(() => { errorMsg.style.display = 'none'; }, 5000);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Envoyer vos vœux 💌';
             }
         });
 
-       
-        // Animation au scroll
+        // Animation fluide au scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -612,13 +498,12 @@ Nous espérons partager ce merveilleux moment avec vous ❤️
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.photo-card, .message-card').forEach(el => {
+        document.querySelectorAll('.photo-card, .guestbook-container, .messages-grid').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
             observer.observe(el);
         });
     </script>
-
 </body>
 </html>
