@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali & Hanaa Amira</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        /* Bouton musique */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(201,168,124,0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.music-control:hover {
+    transform: scale(1.08);
+}
+
+.music-control i {
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+}
         /* Reset & Variables Globales */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -369,7 +398,7 @@
 <body>
 
     <section class="hero">
-        <div class="welcome-message">Bienvenue à nos fiançailles</div>
+        <div class="welcome-message">Bienvenue à notre fiançailles</div>
         <div class="couple-names">
             <span class="name-ali">Ali</span>
             <span class="ampersand">&</span>
@@ -510,6 +539,58 @@
             el.style.transition = 'all 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
             observer.observe(el);
         });
+
+        // Contrôle musique
+window.addEventListener('DOMContentLoaded', () => {
+
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicIcon = document.getElementById('musicIcon');
+
+    music.volume = 0.5;
+
+    let isPlaying = false;
+
+    // Démarrer au premier clic
+    document.addEventListener('click', function startMusic() {
+        music.play()
+            .then(() => {
+                isPlaying = true;
+                musicIcon.className = 'fas fa-volume-high';
+            })
+            .catch(err => console.log(err));
+
+    }, { once: true });
+
+    // Bouton play / pause
+    musicBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        if (isPlaying) {
+            music.pause();
+            musicIcon.className = 'fas fa-volume-xmark';
+        } else {
+            music.play();
+            musicIcon.className = 'fas fa-volume-high';
+        }
+
+        isPlaying = !isPlaying;
+    });
+
+});
+
+
     </script>
+
+     <div class="music-control" id="musicBtn">
+        <i class="fas fa-volume-xmark" id="musicIcon"></i>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <source src="musique.mp3" type="audio/mpeg">
+    </audio>
 </body>
+
+
 </html>
